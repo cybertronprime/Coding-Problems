@@ -27,8 +27,8 @@ func main() {
 	// fmt.Println(TwoDmatrixTraverse(1000,40000005, map1))
 	//----------------------------------Program 3 -----------------------------------//
 	//Returning true if numbers from the array add up to be the number given as input
-
-	var newarr= []int{4}
-	fmt.Println(Prog3(7, newarr))
+	m := make(map[int]bool)
+	var newarr= []int{7,14}
+	fmt.Println(CanSum(10000000, newarr,m))
 }
 
