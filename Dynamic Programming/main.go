@@ -41,8 +41,8 @@ func main() {
 //----------------------------------Program 5 -----------------------------------//
 	//Returning numbers  if numbers from the array add up to be the number given as input
 	m := make(map[int]bool)
-	var newarr= []int{5,3,4,7}
+	var newarr= []int{3,5,2}
 	var newarr1= []int{}
-	fmt.Println(ValueSum(7, newarr,m,newarr1))
+	fmt.Println(ValueSum(700, newarr,m,newarr1))
 }
 
