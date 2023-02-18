@@ -16,13 +16,12 @@ func ValueSum(val int, param []int, myMap map[int]bool, vals []int) (val1 bool, 
 		diff := val - x
 		xyz, vals := ValueSum(diff, param, myMap, vals)
 		if xyz == true {
-			myMap[diff] = true
+			myMap[val] = true
 			vals = append(vals, x)
 			return true, vals
-
 		}
 
-		myMap[diff] = false
+		myMap[val] = false
 
 	}
 

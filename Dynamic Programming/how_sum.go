@@ -14,9 +14,8 @@ func HowSum(val int, param []int, myMap map[int]int) int {
 	counter:=0
 	for _, x := range param {
 		diff := val - x
-
-		myMap[diff] = HowSum(diff, param, myMap) 
-		counter=counter+myMap[diff]
+		myMap[val] = HowSum(diff, param, myMap) 
+		counter=counter+myMap[val]
 
 	}
 	return counter

@@ -33,11 +33,11 @@ func CanSum(val int, param []int, myMap map[int]bool) bool {
 		diff := val - x
 
 		if CanSum(diff, param, myMap) == true {
-			myMap[diff] = true
+			myMap[val] = true
 
 			return true
 		}
-		myMap[diff] = false
+		myMap[val] = false
 
 	}
 	return false
