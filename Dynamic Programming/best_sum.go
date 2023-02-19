@@ -1,9 +1,11 @@
 package main
 
-func BestSum(val int, param []int, myMap map[int][]int, vals []int) (val3 []int) {
+import "fmt"
+
+func BestSum(val int, param []int, myMap map[int][]int) (val3 []int) {
 	//Optimised
 	//This method can be used in howsum
-
+	//Need to understand how a different value gets returned at the end .
 	if val == 0 {
 		return []int{}
 	}
@@ -13,28 +15,29 @@ func BestSum(val int, param []int, myMap map[int][]int, vals []int) (val3 []int)
 	if _, exists := myMap[val]; exists {
 		return myMap[val]
 	}
-
 	for _, x := range param {
 
-		vals = BestSum(val-x, param, myMap, vals)
-		if vals != nil {
-
+		val3 := BestSum(val-x, param, myMap)
+		if val3 != nil {
+			val3 = append(val3, x)
 			if _, exists := myMap[val]; exists {
-				lengthVal := len(myMap[val])
-				if len(vals) <= lengthVal {
-					myMap[val] = append(vals, x)
 
+				if (len(val3) <= len(myMap[val])) {
+					myMap[val] = val3
+				}else{
+					val3=myMap[val]
 				}
-				continue
+			} else {
+				myMap[val] = val3
 
 			}
 
-			myMap[val] = append(vals, x)
+			fmt.Println("myMap[val]", val, myMap[val])
 
 		}
 
-		myMap[val] = nil
 
 	}
 	return myMap[val]
 }
+

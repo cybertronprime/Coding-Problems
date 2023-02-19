@@ -41,17 +41,16 @@ func main() {
 //----------------------------------Program 5 -----------------------------------//
 	//Returning numbers  if numbers from the array add up to be the number given as input
 	// m := make(map[int]bool)
-	// var newarr= []int{3,5,4,7}
+	// var newarr= []int{7,5,4,3}
 	// var newarr1= []int{}
 	// fmt.Println(ValueSum(7, newarr,m,newarr1))
 
 
 //----------------------------------Program 6 -----------------------------------//
 	//Returning least numbers  if numbers from the array add up to be the number given as input
-	// m := make(map[int][]int)
-	// var newarr= []int{3,5,4,7}
-	// var newarr1= []int{}
-	// fmt.Println(BestSum(7, newarr,m,newarr1))
+	m := make(map[int][]int)
+	var newarr= []int{2,3,5,7}
+	fmt.Println(BestSum(7, newarr,m))
 
 }
 
