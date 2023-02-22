@@ -34,9 +34,9 @@ func main() {
 
 // //----------------------------------Program 4 -----------------------------------//
 // 	//Returning numbers of occurences if numbers from the array add up to be the number given as input
-// 	m := make(map[int]int)
-// 	var newarr= []int{5,3,4,7}
-// 	fmt.Println(HowSum(7, newarr,m))
+	// m := make(map[int]int)
+	// var newarr= []int{1,2,5,25}
+	// fmt.Println(HowSum(100, newarr,m))
 
 //----------------------------------Program 5 -----------------------------------//
 	//Returning numbers  if numbers from the array add up to be the number given as input
@@ -48,9 +48,14 @@ func main() {
 
 //----------------------------------Program 6 -----------------------------------//
 	//Returning least numbers  if numbers from the array add up to be the number given as input
-	m := make(map[int][]int)
-	var newarr= []int{2,3,5,7}
-	fmt.Println(BestSum(7, newarr,m))
+	// m := make(map[int][]int)
+	// var newarr= []int{1,2,5,25}
+	// fmt.Println(BestSum(100, newarr,m))
+	//----------------------------------Program 7 -----------------------------------//
+	//Returning if arget word can be formed by the given wordbank
+	
+	var newarr= []string{"a","b","r","o","h","t"}
+	fmt.Println(CanConstruct("rohit", newarr))
 
 }
 
