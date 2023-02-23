@@ -9,12 +9,11 @@ func CanConstruct(target string, wordBank []string) bool {
 	}
 
 	for _, letter := range wordBank {
-		fmt.Println("target",target)
-		fmt.Println("letter",letter)
+		fmt.Println("target", target)
+		fmt.Println("letter", letter)
 		letterLen := len(letter)
 
-		if len(target)>=letterLen &&  target[0:letterLen] == letter  {
-
+		if len(target) >= letterLen && target[0:letterLen] == letter {
 
 			start := letterLen
 			end := len(target)
