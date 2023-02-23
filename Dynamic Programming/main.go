@@ -51,12 +51,25 @@ func main() {
 	// m := make(map[int][]int)
 	// var newarr= []int{1,2,5,25}
 	// fmt.Println(BestSum(100, newarr,m))
+
+
 	//----------------------------------Program 7 -----------------------------------//
-	//Returning if arget word can be formed by the given wordbank
+	//Returning if target word can be formed by the given wordbank
 	
-	var newarr = []string{"r","ro","i","a","hi","ohi","hi"}
-	var myMap =make(map[string]bool)
-	fmt.Println(CanConstruct("rohit", newarr,myMap))
+	// var newarr = []string{"e","ee","eee","eeeeee","eeeeeeeeee"}
+	// var myMap =make(map[string]bool)
+	// fmt.Println(CanConstruct("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef", newarr,myMap))
+
+
+
+
+	//----------------------------------Program 8 -----------------------------------//
+	//Returning numbers of times a target word can be formed by the given wordbank
+
+
+	var newarr = []string{"ab","abc","cd","def","abcd"}
+	var myMap =make(map[string]int)
+	fmt.Println(HowConstruct("abcdef", newarr,myMap))
 
 }
 
