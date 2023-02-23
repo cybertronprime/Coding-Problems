@@ -54,8 +54,9 @@ func main() {
 	//----------------------------------Program 7 -----------------------------------//
 	//Returning if arget word can be formed by the given wordbank
 	
-	var newarr= []string{"r","ro","i","a","hi","ohi","hit"}
-	fmt.Println(CanConstruct("rohit", newarr))
+	var newarr = []string{"r","ro","i","a","hi","ohi","hi"}
+	var myMap =make(map[string]bool)
+	fmt.Println(CanConstruct("rohit", newarr,myMap))
 
 }
 

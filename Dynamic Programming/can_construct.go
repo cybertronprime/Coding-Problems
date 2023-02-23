@@ -1,16 +1,15 @@
 package main
 
-import "fmt"
-
-func CanConstruct(target string, wordBank []string) bool {
+func CanConstruct(target string, wordBank []string, myMap map[string]bool) bool {
 	if target == "" {
 		return true
 
 	}
+	if _, exists := myMap[target]; exists {
+		return myMap[target]
+	}
 
 	for _, letter := range wordBank {
-		fmt.Println("target", target)
-		fmt.Println("letter", letter)
 		letterLen := len(letter)
 
 		if len(target) >= letterLen && target[0:letterLen] == letter {
@@ -18,20 +17,22 @@ func CanConstruct(target string, wordBank []string) bool {
 			start := letterLen
 			end := len(target)
 
-			if len(target) == letterLen {
-				start = 0
-				end = 0
+			// if len(target) == letterLen {
+			// 	start = 0
+			// 	end = 0
 
-			}
-			ifFound := CanConstruct(target[start:end], wordBank)
+			// }
+			ifFound := CanConstruct(target[start:end], wordBank, myMap)
 			if ifFound == true {
+				myMap[target] = true
+
 				return ifFound
 			}
 
 		}
 
 	}
-
+	myMap[target] = false
 	return false
 
 }
