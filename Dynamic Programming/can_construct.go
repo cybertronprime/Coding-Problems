@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func CanConstruct(target string, wordBank []string) bool {
 	if target == "" {
 		return true
@@ -7,19 +9,24 @@ func CanConstruct(target string, wordBank []string) bool {
 	}
 
 	for _, letter := range wordBank {
-		if target != "" && letter == string(target[0]) {
+		fmt.Println("target",target)
+		fmt.Println("letter",letter)
+		letterLen := len(letter)
 
-			if len(target) > 1 {
-				ifFound := CanConstruct(target[1:len(target)-1], wordBank)
-				if ifFound == true {
-					return ifFound
-				}
+		if len(target)>=letterLen &&  target[0:letterLen] == letter  {
 
-			} else {
-				ifFound := CanConstruct("", wordBank)
-				if ifFound == true {
-					return ifFound
-				}
+
+			start := letterLen
+			end := len(target)
+
+			if len(target) == letterLen {
+				start = 0
+				end = 0
+
+			}
+			ifFound := CanConstruct(target[start:end], wordBank)
+			if ifFound == true {
+				return ifFound
 			}
 
 		}
