@@ -1,27 +1,44 @@
 package main
 
-func AllConstruct(target string, wordBank []string) [][]string {
+import "fmt"
+
+func AllConstruct(target string, wordBank []string, myMap map[string][][]string) [][]string {
 
 	if target == "" {
 		return [][]string{}
 	}
+	if _, ok := myMap[target]; ok {
+		return myMap[target]
+	}
+	data := make([][]string, 0)
 
 	for _, letter := range wordBank {
 
 		if len(target) >= len(letter) && target[:len(letter)] == letter {
 
+			value := AllConstruct(target[len(letter):], wordBank, myMap)
 
-			value:=AllConstruct(target[len(letter):],wordBank)
-			if value != nil{
+			if value != nil {
+				if len(value) == 0 {
+					letter1 := []string{letter}
+					value = append(value, letter1)
+				} else {
+					for i, _ := range value {
+						value[i] = append(value[i], letter)
+					}
 
-
+				}
+				data = append(data, value...)
 
 			}
 
-
-
 		}
 	}
-
-	return nil
+	// myMap[target] = make([][]string, len(data))
+	copy(myMap[target], data)
+	fmt.Println(data, myMap)
+//If i try to return myMap[target], the value of the map gets updated due to future operations, but when i return data, 
+//its not affecting the map as map has a copy of data. and for future operations the data gets updated. 
+//this all happens since they are passsed by refn.
+	return data
 }

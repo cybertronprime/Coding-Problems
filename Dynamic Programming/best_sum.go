@@ -20,23 +20,16 @@ func BestSum(val int, param []int, myMap map[int][]int) (val3 []int) {
 		val3 := BestSum(val-x, param, myMap)
 		if val3 != nil {
 			val3 = append(val3, x)
-			// if _, exists := myMap[val]; exists {
-			// 	//find why using equal to here chages the result drasticly-----------******
-			// 	if (len(val3) < len(myMap[val])) {
-			// 		myMap[val] = val3
-			// 	}
-			// } else {
-			// 	myMap[val] = val3
 
-			// }
-
-			if len(val3) < len(myMap[val]) || myMap[val] == nil {
+			if mapdata, exists := myMap[val]; !exists || len(mapdata) > len(val3) {
 				myMap[val] = val3
+
 			}
-			
 
 		}
 		fmt.Println("myMap[val]", val, myMap[val])
 	}
+	// myMap[val] = nil
+
 	return myMap[val]
 }

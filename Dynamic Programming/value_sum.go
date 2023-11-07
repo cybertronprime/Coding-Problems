@@ -1,32 +1,30 @@
 package main
 
-func ValueSum(val int, param []int, myMap map[int]bool, vals []int) (val1 bool, val3 []int) {
+func ValueSum(val int, param []int, myMap map[int][]int) []int {
 	//Optimised
 	//tells about  the first nuumber that adds up to be the number given as input
 	if val == 0 {
-		return true, vals
+		return []int{}
 	}
 	if val < 0 {
-		return false, vals
+		return nil
 	}
 	if _, exists := myMap[val]; exists {
-		return myMap[val], vals
+		return myMap[val]
 	}
+
 	for _, x := range param {
 		diff := val - x
-		xyz, vals := ValueSum(diff, param, myMap, vals)
-		if xyz == true {
-			myMap[val] = true
+		vals := ValueSum(diff, param, myMap)
+		if vals != nil {
+
 			vals = append(vals, x)
-			return true, vals
+			myMap[val] = vals
+			return vals
 		}
 
-		myMap[val] = false
-
 	}
+	myMap[val] = nil
 
-	return false, vals
+	return nil
 }
-
-
-

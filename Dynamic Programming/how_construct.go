@@ -24,5 +24,4 @@ func HowConstruct(target string, wordBank []string, myMap map[string]int) int {
 	}
 	myMap[target] = ifFound
 	return ifFound
-
 }

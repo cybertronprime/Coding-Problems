@@ -1,22 +1,6 @@
 package main
 
 func CanSum(val int, param []int, myMap map[int]bool) bool {
-	// //Unoptimised
-	// if val == 0 {
-	// 	return true
-	// }
-	// if val < 0 {
-	// 	return false
-	// }
-
-	// for _, x := range param {
-
-	// 	if Prog3(val-x, param) == true {
-	// 		return true
-	// 	}
-
-	// }
-	// return false
 
 	//Optimised
 	if val == 0 {

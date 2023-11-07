@@ -16,12 +16,6 @@ func CanConstruct(target string, wordBank []string, myMap map[string]bool) bool 
 
 			start := letterLen
 			end := len(target)
-
-			// if len(target) == letterLen {
-			// 	start = 0
-			// 	end = 0
-
-			// }
 			ifFound := CanConstruct(target[start:end], wordBank, myMap)
 			if ifFound == true {
 				myMap[target] = true

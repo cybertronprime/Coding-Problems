@@ -12,3 +12,23 @@ func Fibb(value int, myMap map[int]int) int {
 	return newValue
 
 }
+
+func FibbTab(value int) int {
+
+	array := make([]int, value+1)
+	array[0] = 0
+	array[1] = 1
+
+	for i, _ := range array {
+
+		if i+2 == value {
+			array[i+2] += array[i]
+		}
+		if i+1 == value {
+			array[i+1] += array[i]
+		}
+
+	}
+	return array[value]
+
+}
