@@ -25,3 +25,34 @@ func HowSum(val int, param []int, myMap map[int]int) int {
 	myMap[val] = counter
 	return myMap[val]
 }
+
+func HowSumTab(val int, param []int) int {
+
+	newArr:=make([]int,val+1)
+	newArr[0]=1
+
+	for i,_:=range newArr{
+
+		if  newArr[i]>0 {
+
+			for _,data:=range param{
+
+				if i+data<=val{
+	
+					newArr[data+i]+=newArr[i]
+				}
+	
+	
+			}
+
+		}
+	}
+	return newArr[val]
+
+
+
+
+
+
+
+}

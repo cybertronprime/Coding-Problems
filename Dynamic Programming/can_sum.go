@@ -53,10 +53,5 @@ func CanSumTab(val int, param []int) bool {
 	}
 	return newArr[val]
 
-
-
-
-
-
-
 }
+

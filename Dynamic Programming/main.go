@@ -73,6 +73,9 @@ func main() {
 
 
 	//----------------------------------Program 10-----------------------------------// CAN_SUM TABULATION
+	// var newarr= []int{5,3,4}
+	// fmt.Println(CanSumTab(7, newarr))
+		//----------------------------------Program 11-----------------------------------// HOW_SUM TABULATION
 	var newarr= []int{5,3,4}
-	fmt.Println(CanSumTab(7, newarr))
+	fmt.Println(HowSumTab(10, newarr))
 }
