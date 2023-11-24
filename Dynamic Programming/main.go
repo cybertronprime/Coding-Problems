@@ -29,6 +29,7 @@ func main() {
 	// var newarr= []int{7,14}
 	// fmt.Println(CanSum(10000000, newarr,m))
 
+
 	// //----------------------------------Program 4 -----------------------------------// HOW SUM
 	// 	//Returning numbers of occurences if numbers from the array add up to be the number given as input
 	// m := make(map[int]int)
@@ -68,5 +69,10 @@ func main() {
 	// fmt.Println(FibbTab(50))
 	//----------------------------------Program 9 -----------------------------------// FIB TABULATION
 
-	fmt.Println(TwoDmatrixTab(3,3))
+	// fmt.Println(TwoDmatrixTab(3,3))
+
+
+	//----------------------------------Program 10-----------------------------------// CAN_SUM TABULATION
+	var newarr= []int{5,3,4}
+	fmt.Println(CanSumTab(7, newarr))
 }
