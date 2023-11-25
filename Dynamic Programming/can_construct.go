@@ -30,3 +30,29 @@ func CanConstruct(target string, wordBank []string, myMap map[string]bool) bool 
 	return false
 
 }
+func CanConstructTab(target string, wordBank []string) bool {
+
+	newArr:=make([]bool,len(target)+1)
+	newArr[0]=true
+
+	for i,_ :=range newArr{
+		if newArr[i]{
+
+			for _,word:=range wordBank{
+				lenOfWord:=len(word)
+				if lenOfWord+i<=len(target) && target[i:i+lenOfWord]==word{
+					newArr[i+lenOfWord]=true
+				}
+
+			}
+
+		}
+
+
+
+	}
+	return newArr[len(target)]
+
+
+}
+

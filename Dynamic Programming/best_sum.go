@@ -33,3 +33,46 @@ func BestSum(val int, param []int, myMap map[int][]int) (val3 []int) {
 
 	return myMap[val]
 }
+
+func BestSumTab(val int, param []int) []int {
+
+	newArr:=make([][]int,val+1)
+	newArr[0]=[]int{0}
+
+	for i,_:=range newArr{
+		currentLength:=len(newArr[i])
+
+		if  currentLength>0 {
+
+			for _,data:=range param{
+
+				if i+data<=val{
+					
+					oldArray:=newArr[i]
+					oldArray=append(oldArray, data)
+					existingData:=newArr[i+data]
+					if len(existingData)==0 || len(existingData)>len(oldArray){
+						newArr[i+data]=oldArray
+
+					}
+					
+			
+					
+				}
+				
+	
+	
+			}
+
+		}
+	}
+	fmt.Println(newArr)
+	return newArr[val][1:]
+
+
+
+
+
+
+
+}

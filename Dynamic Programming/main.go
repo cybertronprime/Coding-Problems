@@ -81,6 +81,20 @@ func main() {
 
 		//----------------------------------Program 12-----------------------------------// Value_SUM TABULATION
 
-	var newarr= []int{5,3,4}
-	fmt.Println(ValueSumTab(7, newarr))
+	// var newarr= []int{5,3,4}
+	// fmt.Println(ValueSumTab(7, newarr))
+			//----------------------------------Program 13-----------------------------------// Best_SUM TABULATION
+
+			// var newarr= []int{5,3,4,}
+			// fmt.Println(BestSumTab(7, newarr))
+
+
+//----------------------------------Program 14-----------------------------------// CanConstructTab TABULATION
+
+	// var newarr = []string{"ab","abc","cd","def","abcd"}
+	// fmt.Println(CanConstructTab("abcdef", newarr))
+		//----------------------------------Program 15-----------------------------------//
+	//Returning numbers of times a target word can be formed by the given wordbank
+	var newarr = []string{"ab","abc","cd","def","abcd","abcdef"}
+	fmt.Println(HowConstructTab("abcdef", newarr))
 }

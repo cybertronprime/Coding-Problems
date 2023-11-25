@@ -25,3 +25,30 @@ func HowConstruct(target string, wordBank []string, myMap map[string]int) int {
 	myMap[target] = ifFound
 	return ifFound
 }
+
+func HowConstructTab(target string, wordBank []string) int {
+
+	newArr:=make([]int,len(target)+1)
+	newArr[0]=1
+
+	for i,_ :=range newArr{
+		if newArr[i]>0{
+
+			for _,word:=range wordBank{
+				lenOfWord:=len(word)
+				if lenOfWord+i<=len(target) && target[i:i+lenOfWord]==word{
+					newArr[i+lenOfWord]+=newArr[i]
+				}
+
+			}
+
+		}
+
+
+
+	}
+	return newArr[len(target)]
+
+
+}
+
