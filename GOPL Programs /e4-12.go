@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"strconv"
+	"strings"
 )
 
 type picdata struct {
@@ -61,5 +62,33 @@ func FetchingDataGOPL() {
 	file, _ := json.Marshal(fullData)
 
 	_ = os.WriteFile("test.json", file, 0644)
+
+}
+func FindingDataGOPL(data1,data2,data3 string) {
+	input:=[]string{data1,data2,data3}
+	file, err:= os.ReadFile("test.json");
+	if err!=nil{
+		fmt.Println("Error")
+	}
+	var body []picdata
+	err = json.Unmarshal(file,&body)
+	outer:
+		for _,data:=range body{
+
+			for _, word:= range input{
+				if strings.Contains(data.Safe_title,word) || strings.Contains(data.Title,word) || strings.Contains(data.Transcript,word){
+
+					continue
+					
+
+				}else{
+					continue outer
+				}
+				
+
+			}
+			fmt.Println(data)
+			
+		}
 
 }

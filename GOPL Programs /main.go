@@ -1,6 +1,10 @@
 package main
 
+import "os"
+
 func main(){
+
+	first,second,third:=os.Args[1],os.Args[2],	os.Args[3]
 	
-	FetchingDataGOPL()
+	FindingDataGOPL(first,second,third)
 }

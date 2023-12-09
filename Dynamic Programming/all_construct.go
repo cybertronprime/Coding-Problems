@@ -42,3 +42,52 @@ func AllConstruct(target string, wordBank []string, myMap map[string][][]string)
 //this all happens since they are passsed by refn.
 	return data
 }
+
+func AllConstructTab(target string, wordBank []string)  [][]string {
+
+	myArr:=make([][][]string,len(target)+1)
+
+	newArr:=[][]string{}
+	data:="a"
+	sencondArr:=[]string{data}
+	newArr = append(newArr,sencondArr )
+
+	myArr[0]=newArr
+
+	for i,_:=range myArr{
+
+		if len(myArr[i])>0{
+
+			for _,word:=range wordBank{
+
+				if i+len(word)<=len(target) && target[i:i+len(word)]==word{
+					if len(myArr[i])==0{
+						data1:=[]string{word}
+						myArr[i+len(word)]=append(myArr[i+len(word)], data1)
+
+					}else{
+						for _,newData:=range myArr[i]{
+							newData=append(newData,word)
+
+						}
+
+					}
+
+
+				}
+
+
+
+			}
+
+		}
+	}
+
+
+fmt.Println(myArr)
+
+return myArr[len(target)]
+
+
+
+}

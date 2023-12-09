@@ -95,6 +95,9 @@ func main() {
 	// fmt.Println(CanConstructTab("abcdef", newarr))
 		//----------------------------------Program 15-----------------------------------//
 	//Returning numbers of times a target word can be formed by the given wordbank
+	// var newarr = []string{"ab","abc","cd","def","abcd","abcdef"}
+	// fmt.Println(HowConstructTab("abcdef", newarr))
+
 	var newarr = []string{"ab","abc","cd","def","abcd","abcdef"}
-	fmt.Println(HowConstructTab("abcdef", newarr))
+	fmt.Println(AllConstructTab("abcdef", newarr))
 }
