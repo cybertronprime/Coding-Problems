@@ -48,13 +48,13 @@ func AllConstructTab(target string, wordBank []string)  [][]string {
 	myArr:=make([][][]string,len(target)+1)
 
 	newArr:=[][]string{}
-	data:="a"
+	data:=""
 	sencondArr:=[]string{data}
 	newArr = append(newArr,sencondArr )
 
 	myArr[0]=newArr
 
-	for i,_:=range myArr{
+	for i:=range myArr{
 
 		if len(myArr[i])>0{
 
@@ -68,6 +68,7 @@ func AllConstructTab(target string, wordBank []string)  [][]string {
 					}else{
 						for _,newData:=range myArr[i]{
 							newData=append(newData,word)
+							myArr[i+len(word)]=append(myArr[i+len(word)], newData)
 
 						}
 
